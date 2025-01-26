@@ -1,21 +1,20 @@
 {
   "name": "electron-app",
-  "version": "1.0.5",
+  "version": "4.0.2",
   "description": "My test electron app",
   "main": "main.js",
-"scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "watch": "nodemon --exec electron .",
-  "start": "electron .",
-  "dist": "electron-builder",
-  "build": "npm run dist"
-},
-
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon --exec electron .",
+    "start": "electron .",
+    "dist": "electron-builder",
+    "build": "npm run dist"
+  },
   "repository": "https://github.com/DeekshaKhattar/auto-update",
   "author": "CoderJeet",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^25.0.0",
+    "electron": "^25.9.8",
     "electron-builder": "^23.6.0",
     "nodemon": "^2.0.19"
   },
@@ -36,13 +35,21 @@
       "main.js",
       "package.json",
       "index.html",
-      "assets/**/*"
+      "assets/**/*",
+      "screens/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "build/system_health.py",
+        "to": "system_health.py"
+      }
     ],
     "nsis": {
       "oneClick": false,
       "perMachine": true,
       "allowElevation": true,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "include": "installer.nsi"
     },
     "publish": {
       "provider": "github",

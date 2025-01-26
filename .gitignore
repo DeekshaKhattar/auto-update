@@ -36,9 +36,12 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
+app/build/Release
 
 # Dependency directories
 node_modules/
+jspm_packages/
+app/node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -81,6 +84,7 @@ typings/
 # Nuxt.js build / generate output
 .nuxt
 dist
+app/dist
 
 # Gatsby files
 .cache/
@@ -90,6 +94,7 @@ dist
 
 # vuepress build output
 .vuepress/dist
+app/.vuepress/dist
 
 # Serverless directories
 .serverless/
@@ -102,3 +107,24 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Windows
+*.exe
+*.msi
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+.electron-builder/
+
+# build/
+app/build/
+
+build/Release
+app/build/Release
+
+# Allow specific files within build folder to be tracked by Git
+!app/build/autoUpdate_service.py
+!app/build/install_service.bat
